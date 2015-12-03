@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- saved from url=(0213)http://localhost/phpmyadmin/db_datadict.php?db=pce&token=6c73a4b39c4255df3a8cae5cb13b9bbe&goto=db_structure.php#PMAURL-0:db_datadict.php?db=pce&table=product&server=1&target=&token=6c73a4b39c4255df3a8cae5cb13b9bbe -->
+<html lang="en" dir="ltr" class="chrome chrome46" pmbx_context="1D297555-DC63-43A7-89F6-58767C01BB55"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><link rel="icon" href="http://localhost/phpmyadmin/favicon.ico" type="image/x-icon"><link rel="shortcut icon" href="http://localhost/phpmyadmin/favicon.ico" type="image/x-icon"><link rel="stylesheet" type="text/css" href="./Data Dictionary_files/print.css"><title>Print view - phpMyAdmin 4.3.11</title><script type="text/javascript" src="./Data Dictionary_files/whitelist.php"></script><script type="text/javascript" src="./Data Dictionary_files/get_scripts.js.php"></script><script type="text/javascript" src="./Data Dictionary_files/messages.php"></script><script type="text/javascript" src="./Data Dictionary_files/get_image.js.php"></script><script type="text/javascript">// <![CDATA[
+PMA_commonParams.setAll({common_query:"?token=6c73a4b39c4255df3a8cae5cb13b9bbe",opendb_url:"db_structure.php",safari_browser:"0",collation_connection:"utf8mb4_unicode_ci",lang:"en",server:"1",table:"",db:"pce",token:"6c73a4b39c4255df3a8cae5cb13b9bbe",text_dir:"ltr",pma_absolute_uri:"http://localhost/phpmyadmin/",pma_text_default_tab:"Browse",pma_text_left_default_tab:"Structure",LimitChars:"50",pftext:"P",confirm:"1",LoginCookieValidity:"1440",logged_in:"1"});
+AJAX.scriptHandler.add("jquery/jquery-1.8.3.min.js",0).add("whitelist.php?lang=en&amp;db=pce&amp;token=6c73a4b39c4255df3a8cae5cb13b9bbe",1).add("sprintf.js",1).add("ajax.js",0).add("keyhandler.js",1).add("jquery/jquery-ui-1.9.2.custom.min.js",0).add("jquery/jquery.cookie.js",0).add("jquery/jquery.mousewheel.js",0).add("jquery/jquery.event.drag-2.2.js",0).add("jquery/jquery-ui-timepicker-addon.js",0).add("jquery/jquery.ba-hashchange-1.3.js",0).add("jquery/jquery.debounce-1.0.5.js",0).add("menu-resizer.js",1).add("cross_framing_protection.js",0).add("rte.js",1).add("tracekit/tracekit.js",1).add("error_report.js",1).add("messages.php?lang=en&amp;db=pce&amp;token=6c73a4b39c4255df3a8cae5cb13b9bbe",0).add("get_image.js.php?theme=pmahomme",0).add("doclinks.js",1).add("functions.js",1).add("navigation.js",0).add("indexes.js",1).add("common.js",1).add("codemirror/lib/codemirror.js",0).add("codemirror/mode/sql/sql.js",0).add("codemirror/addon/runmode/runmode.js",0).add("codemirror/addon/hint/show-hint.js",0).add("codemirror/addon/hint/sql-hint.js",0);
+$(function() {AJAX.fireOnload("whitelist.php?lang=en&amp;db=pce&amp;token=6c73a4b39c4255df3a8cae5cb13b9bbe");AJAX.fireOnload("sprintf.js");AJAX.fireOnload("keyhandler.js");AJAX.fireOnload("menu-resizer.js");AJAX.fireOnload("rte.js");AJAX.fireOnload("tracekit/tracekit.js");AJAX.fireOnload("error_report.js");AJAX.fireOnload("doclinks.js");AJAX.fireOnload("functions.js");AJAX.fireOnload("indexes.js");AJAX.fireOnload("common.js");});
+// ]]></script><noscript>&lt;style&gt;html{display:block}&lt;/style&gt;</noscript></head><body><noscript>&lt;div class="error"&gt;&lt;img src="themes/dot.gif" title="" alt="" class="icon ic_s_error" /&gt; Javascript must be enabled past this point!&lt;/div&gt;</noscript><div id="page_content"><div>
+<h2>employee</h2>
+<table width="100%" class="print"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+</tr><tr class="odd"><td class="nowrap">empID <em>(Primary)</em></td><td class="nowrap" lang="en" dir="ltr">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td>รหัสพนักงาน</td>
+</tr><tr class="even"><td class="nowrap">firstName</td><td class="nowrap" lang="en" dir="ltr">varchar(30)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td>ชื่อจริง</td>
+</tr><tr class="odd"><td class="nowrap">lastName</td><td class="nowrap" lang="en" dir="ltr">varchar(30)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td>นามสกุล</td>
+</tr><tr class="even"><td class="nowrap">username</td><td class="nowrap" lang="en" dir="ltr">varchar(30)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td>ชื่อผู้ใช้(เข้าสู่ระบบ)</td>
+</tr><tr class="odd"><td class="nowrap">password</td><td class="nowrap" lang="en" dir="ltr">varchar(30)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td>รหัสผ่าน(เข้าสู่ระบบ)</td>
+</tr><tr class="even"><td class="nowrap">type</td><td lang="en" dir="ltr">enum('A', 'P', 'S')</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td>ประเภทพนักงาน(A=ผู้บริหาร,P=ฝ่ายผลิต,S=ฝ่ายขาย)</td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="./Data Dictionary_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody><tr class="noclick odd"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>empID</td><td>0</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div><div>
+<h2>member</h2>
+<table width="100%" class="print"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+</tr><tr class="odd"><td class="nowrap">memberID <em>(Primary)</em></td><td class="nowrap" lang="en" dir="ltr">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td>รหัสลูกค้า</td>
+</tr><tr class="even"><td class="nowrap">firstName</td><td class="nowrap" lang="en" dir="ltr">varchar(30)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td>ชื่อจริง</td>
+</tr><tr class="odd"><td class="nowrap">lastName</td><td class="nowrap" lang="en" dir="ltr">varchar(30)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td>นามสกุล</td>
+</tr><tr class="even"><td class="nowrap">tel</td><td class="nowrap" lang="en" dir="ltr">varchar(15)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td>เบอร์โทรศัพท์</td>
+</tr><tr class="odd"><td class="nowrap">username</td><td class="nowrap" lang="en" dir="ltr">varchar(30)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td>ชื่อผู้ใช้(เข้าสู่ระบบ)</td>
+</tr><tr class="even"><td class="nowrap">password</td><td class="nowrap" lang="en" dir="ltr">varchar(30)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td>รหัสผ่าน(เข้าสู่ระบบ)</td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="./Data Dictionary_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody><tr class="noclick odd"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>memberID</td><td>0</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div><div>
+<h2>order</h2>
+<table width="100%" class="print"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+</tr><tr class="odd"><td class="nowrap">orderID <em>(Primary)</em></td><td class="nowrap" lang="en" dir="ltr">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td>รหัสออเดอร์</td>
+</tr><tr class="even"><td class="nowrap">memberID</td><td class="nowrap" lang="en" dir="ltr">int(11)</td><td>No</td><td class="nowrap"></td>    <td>member -&gt; memberID</td>
+    <td>รหัสสมาชิก</td>
+</tr><tr class="odd"><td class="nowrap">productID</td><td class="nowrap" lang="en" dir="ltr">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td>product -&gt; productID</td>
+    <td>รหัสสินค้า</td>
+</tr><tr class="even"><td class="nowrap">price</td><td class="nowrap" lang="en" dir="ltr">int(11)</td><td>Yes</td><td class="nowrap"><i>NULL</i></td>    <td></td>
+    <td>ราคา(จากการตกลง)</td>
+</tr><tr class="odd"><td class="nowrap">note</td><td class="nowrap" lang="en" dir="ltr">text</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td>หมายเหตุ</td>
+</tr><tr class="even"><td class="nowrap">status</td><td lang="en" dir="ltr">enum('0', '1', '2', '3', '4', '5', '6', '7')</td><td>No</td><td class="nowrap">0</td>    <td></td>
+    <td>สถานะ(0=รอการตอบกลับจากผู้บริหาร,1=ผู้บริหารปฏิเสธราคา,2=ลูกค้ายอมรับราคา,3=ผู้บริหารยืนยัน,4=กำลังผลิต,5=ผลิตเสร็จสิ้น,6=รอส่งมอบ,7=จบการขาย)</td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="./Data Dictionary_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody><tr class="noclick odd"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>orderID</td><td>0</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div><div>
+<h2>product</h2>
+<table width="100%" class="print"><tbody><tr><th width="50">Column</th><th width="80">Type</th><th width="40">Null</th><th width="70">Default</th>    <th>Links to</th>
+    <th>Comments</th>
+</tr><tr class="odd"><td class="nowrap">productID <em>(Primary)</em></td><td class="nowrap" lang="en" dir="ltr">int(11)</td><td>No</td><td class="nowrap"></td>    <td></td>
+    <td>รหัสสินค้า</td>
+</tr></tbody></table><h3>Indexes</h3><div class="no_indexes_defined hide"><div class="notice"><img src="./Data Dictionary_files/dot.gif" title="" alt="" class="icon ic_s_notice"> No index defined!</div></div><table id="table_index"><thead><tr><th>Keyname</th><th>Type</th><th>Unique</th><th>Packed</th><th>Column</th><th>Cardinality</th><th>Collation</th><th>Null</th><th>Comment</th></tr></thead><tbody><tr class="noclick odd"><td rowspan="1">PRIMARY</td><td rowspan="1">BTREE</td><td rowspan="1">Yes</td><td rowspan="1">No</td><td>productID</td><td>0</td><td>A</td><td>No</td><td rowspan="1"></td></tr></tbody></table></div><p class="print_ignore"><input type="button" class="button" id="print" value="Print"></p></div><div id="selflink" class="print_ignore"><a href="http://localhost/phpmyadmin/db_datadict.php?db=pce&table=product&server=1&target=&token=6c73a4b39c4255df3a8cae5cb13b9bbe" title="Open new phpMyAdmin window" target="_blank"><img src="./Data Dictionary_files/dot.gif" title="Open new phpMyAdmin window" alt="Open new phpMyAdmin window" class="icon ic_window-new"></a></div><div class="clearfloat" id="pma_errors"></div><script type="text/javascript">// <![CDATA[
+AJAX.cache.primer = { url: "db_datadict.php?db=pce&table=product&server=1&target=&token=6c73a4b39c4255df3a8cae5cb13b9bbe", scripts: [{"name":"jquery\/jquery-1.8.3.min.js","fire":0},{"name":"sprintf.js","fire":1},{"name":"ajax.js","fire":0},{"name":"keyhandler.js","fire":1},{"name":"jquery\/jquery-ui-1.9.2.custom.min.js","fire":0},{"name":"jquery\/jquery.cookie.js","fire":0},{"name":"jquery\/jquery.mousewheel.js","fire":0},{"name":"jquery\/jquery.event.drag-2.2.js","fire":0},{"name":"jquery\/jquery-ui-timepicker-addon.js","fire":0},{"name":"jquery\/jquery.ba-hashchange-1.3.js","fire":0},{"name":"jquery\/jquery.debounce-1.0.5.js","fire":0},{"name":"menu-resizer.js","fire":1},{"name":"cross_framing_protection.js","fire":0},{"name":"rte.js","fire":1},{"name":"tracekit\/tracekit.js","fire":1},{"name":"error_report.js","fire":1},{"name":"doclinks.js","fire":1},{"name":"functions.js","fire":1},{"name":"navigation.js","fire":0},{"name":"indexes.js","fire":1},{"name":"common.js","fire":1},{"name":"codemirror\/lib\/codemirror.js","fire":0},{"name":"codemirror\/mode\/sql\/sql.js","fire":0},{"name":"codemirror\/addon\/runmode\/runmode.js","fire":0},{"name":"codemirror\/addon\/hint\/show-hint.js","fire":0},{"name":"codemirror\/addon\/hint\/sql-hint.js","fire":0}], menuHash: "3676f045"};
+AJAX.scriptHandler;
+$(function() {});
+// ]]></script></body></html>
