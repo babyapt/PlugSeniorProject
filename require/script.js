@@ -16,7 +16,7 @@ $(function(){
 			data = $.parseJSON(data);
 			console.log(data);
 			if(data.status=='SUCCESS'){
-				window.location = window.location;
+				document.location = document.location;
 			} else if(data.status=='ERROR'){
 				switch(data.reason){
 				case 'NOTVALID':
@@ -45,10 +45,11 @@ $(function(){
 		}
 	});
 	$( '#logout' ).click(function(){
-		$post('dataCenter.php',{
-			
+		$.post('dataCenter.php',{
+			'type': 'get',
+			'action': 'logout'
 		},function(data){
-			
+			document.location = document.location;
 		})
 	});
 });
@@ -59,4 +60,7 @@ function wrongField(obj,text){
 	$( objo ).addClass('alert-danger');
 	$( objo ).popover({content:text, placement: 'bottom'});
 	$( objo ).popover("show");
+}
+function voidf(){
+	return true;
 }
