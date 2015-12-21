@@ -16,7 +16,10 @@ $(function(){
 			data = $.parseJSON(data);
 			console.log(data);
 			if(data.status=='SUCCESS'){
-				document.location = document.location;
+				$('#loginForm').html('<div class="alert alert-success"><strong>เข้าสู่ระบบสำเร็จ</strong> อีก 3 วินาทีจะทำการเปลี่ยนหน้า หรือ <a href="'+document.location+'">คลิกที่นี่</a></div>');
+				setTimeout(function(){
+					document.location = document.location;
+				}, 3000);
 			} else if(data.status=='ERROR'){
 				switch(data.reason){
 				case 'NOTVALID':

@@ -29,7 +29,8 @@
     })
     </script>
 <?php
-	echo $requireDialog; 
+// 	echo $requireDialog;
+	if (is_array($requireDialog)||is_object($requireDialog)) foreach($requireDialog as $val) require_once($val); 
 ?>
 </body>
 

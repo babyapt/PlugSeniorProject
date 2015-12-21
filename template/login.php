@@ -2,7 +2,7 @@
 	<div class="modal-dialog modal-sm">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<?php if(!$authRequire){?><button type="button" class="close" data-dismiss="modal">&times;</button><?php }?>
 				<h4 class="modal-title">ระบบสมาชิก</h4>
 			</div>
 			<div class="modal-body form-group">
@@ -19,3 +19,14 @@
 		</div>
 	</div>
 </div>
+<?php
+	if($authRequire) echo '
+		<script>
+			$(function(){
+				$("#loginModal").modal({
+    				backdrop: "static",
+    				keyboard: false
+				}).modal("show");
+			});
+		</script>';
+?>
