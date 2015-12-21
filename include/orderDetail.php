@@ -28,13 +28,14 @@
 				$data.= '<div class="col-sm-2"><strong>รหัสการสั่งซื้อ : </strong></div><div class="col-sm-4">'.$row['orderID'].'</div>';
 				$data.= '<div class="col-sm-2"><strong>สถานะ : </strong></div><div class="col-sm-4">'.getOrderStatus($row['status']).'</div>';
 				$data.= '<div class="col-sm-2"><strong>ราคาที่ตกลง : </strong></div><div class="col-sm-4">'.$row['price'].'</div>';
-				$data.= '<div class="col-sm-12"><strong>หมายเหตุ : </strong></div><div class="col-sm-12"><span>'.$row['note'].'</span></div>';
+				$data.= '<div class="col-sm-12"><strong>หมายเหตุ : </strong></div><div class="col-sm-12"><span>'.nl2br($row['note']).'</span></div>';
 				$data.= '<div class="col-sm-12"><strong>เอกสารแนบ : </strong></div>';
 				$photo = Array();
 				$file = Array();
 				switch($row['status']){
 					case '0':
 						$file[] = 'files.php?type=get&action=pdf&orderid='.$orderID.'&tag=purchase';
+						$photo[] = 'files.php?type=get&action=photo&orderid='.$orderID.'&tag=draft';
 						break;
 					case '1':
 						$photo[] = 'files.php?type=get&action=photo&orderid='.$orderID.'&tag=quote';

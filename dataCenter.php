@@ -1,5 +1,6 @@
 <?php
 	require_once 'config.php';
+	require_once 'require/memberdc.php';
 	$type = isset($_REQUEST['type'])?$_REQUEST['type']:'';
 	$action = isset($_REQUEST['action'])?$_REQUEST['action']:'';
 	$file = 'dc/';
