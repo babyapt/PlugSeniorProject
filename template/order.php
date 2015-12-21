@@ -28,6 +28,7 @@
 		}
 	}
 ?>
+<h1>แบบฟอร์มสั่งทำชิ้นงาน</h1>
 <ul class="nav nav-tabs">
 	<li class="active"><a data-toggle="tab" href="#custom">ลูกค้ากำหนดเอง</a></li>
 	<li><a data-toggle="tab" href="#basic">รูปแบบพื้นฐาน</a></li>
@@ -61,13 +62,14 @@
 </div>
 <div class="panel panel-default">
 	<div class="panel-body form-group">
-		<div class="col-sm-12"><strong>อัพโหลดใบสั่งซื้อ : </strong></div>
-		<div class="col-sm-3"><small><abbr title="นามสกุลของไฟล์จะต้องเป็น .pdf เท่านั้น">(รูปแบบไฟล์ PDF เท่านั้น)</abbr></small></div>
-		<div class="col-sm-9"><input type="file" /></div>
-		<div class="col-sm-12"><strong>อัพโหลดรูปโครงสร้างชิ้นงาน : </strong></div>
-		<div class="col-sm-3"><small><abbr title="นามสกุลของไฟล์จะต้องเป็น .jpg หรือ .jpeg เท่านั้น">(รูปแบบไฟล์ JPG เท่านั้น)</abbr></small></div>
-		<div class="col-sm-9"><input type="file" /></div>
+		<div class="col-sm-12"><strong>อัพโหลดใบสั่งซื้อ : </strong><br /><small><abbr title="นามสกุลของไฟล์จะต้องเป็น .pdf เท่านั้น">(รูปแบบไฟล์ PDF เท่านั้น)</abbr> ระบบจะจัดเก็บไฟล์ที่ท่านอัปโหลดล่าสุดเท่านั้น</small></div>
+		<div class="col-sm-12"><input type="file" id="purchaseFile" /><input type="hidden" id="purchaseFileCheck" /></div>
+		<div class="col-sm-12"><strong>อัพโหลดรูปโครงสร้างชิ้นงาน : </strong><br /><small><abbr title="นามสกุลของไฟล์จะต้องเป็น .jpg หรือ .jpeg เท่านั้น">(รูปแบบไฟล์ JPG เท่านั้น)</abbr> ระบบจะจัดเก็บไฟล์ที่ท่านอัปโหลดล่าสุดเท่านั้น</small></div>
+		<div class="col-sm-12"><input type="file" id="draftFile" /><input type="hidden" id="draftFileCheck" /></div>
 		<div class="col-sm-12"><strong>รายละเอียด : </strong></div>
-		<div class="col-sm-12"><textarea class="form-control"></textarea></div>
+		<div class="col-sm-12"><textarea class="form-control" id="detail"></textarea></div>
 	</div>
+</div>
+<div class="col-sm-12 text-center">
+	<button type="button" class="btn btn-default" id="send">ส่งคำสั่งซื้อ</button>
 </div>

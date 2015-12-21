@@ -50,5 +50,74 @@
 		$( '.selectProduct' ).click(function(){
 			$( '#productID' ).val($( this ).attr( 'data-productID' ));
 		});
+		$( '#send' ).click(function(){
+			var error = false;
+			if($( '#basic' ).css( 'display' )=="none")
+				var type = "custom";
+			else
+				var type = "basic";
+			if(type=="basic"&&$( '#productID' ).val()=='')	error = true;
+			if($( '#purchaseFileCheck' ).val()==''||$( '#draftFileCheck' ).val()=='') error = true;
+			if(!error){
+				$.post('dataCenter.php',{
+						'type': 'set',
+						'action': 'addOrder',
+						'orderType': type,
+						'detail': $( '#detail' ).val(),
+						'productID': $( '#productID' ).val(),  
+						'color': $( '#colorselector' ).val()  
+					},function(data){
+						var data = $.parseJSON(data);
+						if(data.status=="SUCCESS"){
+							alert('ส่งคำสั่งซื้อสำเร็จ');
+							document.location='?page=orderDetail&orderid='+data.orderid;
+						} else {
+							alert('มีข้อผิดพลาด\n'+data.error);
+							console.log(data.strSQL);
+						}
+					});
+			} else {
+				var text = '';
+				if(type=="basic"&&$( '#productID' ).val()=='')	text += 'กรุณาเลือกรูปแบบพื้นฐาน\n';
+				if($( '#purchaseFileCheck' ).val()=='') text += 'กรุณาอัพโหลดใบสั่งซื้อ\n';
+				if($( '#draftFileCheck' ).val()=='') text += 'กรุณาอัพโหลดโครงสร้างชิ้นงาน\n';
+				alert(text);
+			}
+		});
+	});
+	var $pinput = $("#purchaseFile");
+	$pinput.fileinput({
+	    uploadUrl: "dataCenter.php", // server upload action
+	    allowedFileExtensions: ["pdf"],
+	    language: "th",
+	    uploadExtraData: {type:'set',action:'upload',tag:'order',name:'purchase'},
+	    uploadAsync: false,
+	    showUpload: false, // hide upload button
+	    showRemove: false, // hide remove button
+	    minFileCount: 0,
+	    maxFileCount: 1,
+	    autoReplace: true,
+	    validateInitialCount: true
+	}).on("filebatchselected", function(event, files) {
+	    // trigger upload method immediately after files are selected
+	    $pinput.fileinput("upload");
+	    $("#purchaseFileCheck").val("1");
+	});
+	$("#draftFile").fileinput({
+	    uploadUrl: "dataCenter.php", // server upload action
+	    allowedFileExtensions: ["jpg","jpeg"],
+	    language: "th",
+	    uploadExtraData: {type:'set',action:'upload',tag:'order',name:'draft'},
+	    uploadAsync: false,
+	    showUpload: false, // hide upload button
+	    showRemove: false, // hide remove button
+	    minFileCount: 0,
+	    maxFileCount: 1,
+	    autoReplace: true,
+	    validateInitialCount: true
+	}).on("filebatchselected", function(event, files) {
+	    // trigger upload method immediately after files are selected
+	    $("#draftFile").fileinput("upload");
+	    $("#draftFileCheck").val("1");
 	});
 </script>

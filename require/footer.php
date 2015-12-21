@@ -22,6 +22,8 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Custom JavasScript -->
 	<script src="require/script.js"></script>
+	<script src="require/fileinput.js" type="text/javascript"></script>
+	<script src="require/fileinput_locale_th.js"></script>
     <!-- Script to Activate the Carousel -->
     <script>
     $('.carousel').carousel({
