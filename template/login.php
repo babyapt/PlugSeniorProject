@@ -13,7 +13,7 @@
 					<input type="password" class="form-control" id="pwd" name="pwd" placeholder="โปรดใส่รหัสผ่าน">
 					<span class="help-block">ลืมรหัสผ่าน?</span>
 					<input type="submit" id="loginSubmit" class="btn btn-block btn-primary" value="เข้าสู่ระบบ" />
-					<button type="button" id="register" class="btn btn-block">สมัครสมาชิก</button>
+					<button type="button" id="register" class="btn btn-block"  data-toggle="modal" data-target="#registerModal">สมัครสมาชิก</button>
 				</form>
 			</div>
 		</div>
@@ -29,4 +29,5 @@
 				}).modal("show");
 			});
 		</script>';
+	require_once 'template/register.php';
 ?>
